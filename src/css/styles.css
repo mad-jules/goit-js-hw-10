@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  padding: 24px;
+}
+
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 24px;
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.gallery > li {
+  flex-basis: calc((100% - 48px) / 3);
+}
+
+.gallery img {
+  height: 100%;
+}
+
+.gallery-item {
+  transition:
+    transform,
+    box-shadow,
+    150ms ease-in-out;
+}
+
+.gallery-item:hover {
+  transform: scale(104%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.basicLightbox {
+  cursor: pointer;
+}
+
+.back-link,
+.hw-link {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ff10f0;
+  text-decoration: none;
+  font-style: normal;
+  padding: 4px;
+  margin-bottom: 8px;
+}
+
+.back-link:hover,
+.hw-link:hover {
+  outline: 2px solid #cefa05;
+  border-radius: 4px;
+}
+
+.feedback-form,
+.feedback-form input,
+.feedback-form textarea {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.feedback-form {
+  row-gap: 8px;
+  width: 408px;
+  padding: 12px 24px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 360px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 8px 16px;
+  outline: none;
+  resize: none;
+}
+.feedback-form input {
+  height: 40px;
+}
+
+.feedback-form input:hover,
+.feedback-form input:focus,
+.feedback-form textarea:hover,
+.feedback-form textarea:focus {
+  border: 1px solid #000;
+}
+
+.feedback-form button {
+  display: block;
+  min-width: 86px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #4e75ff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: auto;
+  margin-top: 16px;
+  border: none;
+}
+
+.feedback-form button:hover {
+  background-color: #6c8cff;
+}
