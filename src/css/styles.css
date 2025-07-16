@@ -79,10 +79,10 @@ body {
 .task-list {
   position: absolute;
   bottom: 17.6%;
-  left: 20.3%;
+  left: 20.4%;
   color: #fff;
   display: flex;
-  column-gap: 157px;
+  column-gap: 158px;
   list-style: none;
   font-weight: 700;
 }
