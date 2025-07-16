@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="task-page">
+    <a class="back-link" href="./index.html">Back</a>
+    <form class="form">
+      <label>
+        Delay (ms)
+        <input type="number" name="delay" min="0" required />
+      </label>
+
+      <fieldset>
+        <legend>State</legend>
+        <label>
+          <input type="radio" name="state" value="fulfilled" required />
+          <svg class="custom-radio-btn" width="32" height="32">
+            <use href="./img/svg.svg#radio-icon"></use>
+          </svg>
+          Fulfilled
+        </label>
+        <label>
+          <input type="radio" name="state" value="rejected" required />
+          <svg class="custom-radio-btn" width="32" height="32">
+            <use href="./img/svg.svg#radio-icon"></use>
+          </svg>
+          Rejected
+        </label>
+      </fieldset>
+
+      <button class="notification-btn btn" type="submit">
+        Create notification
+      </button>
+    </form>
+
+    <script defer src="./js/2-snackbar.js" type="module"></script>
+  </body>
+</html>

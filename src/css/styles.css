@@ -1,11 +1,5 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   background-color: #fafafa;
-  padding: 50px 156px;
-  position: relative;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -14,26 +8,132 @@ body {
   color: #2e2f42;
 }
 
-a {
+.task-page {
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url(../img/background.png);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  color: #00ff00; /* Стиль тексту як у Матриці */
+  font-family: monospace;
+  padding: 30px 156px;
+}
+
+.container {
+  position: relative;
+  width: 600px;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+}
+
+.welcome-page {
+  background-color: rgba(13, 12, 7);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  font-size: 14px;
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.matrix-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.05) 0px,
+    rgba(0, 255, 0, 0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: matrixRain 0.4s linear infinite;
+}
+
+@keyframes matrixRain {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 4px;
+  }
+}
+
+.background-img {
   display: block;
-  margin-bottom: 20px;
+  object-fit: contain;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+.task-list {
   position: absolute;
-  left: 35px;
-  top: 20px;
+  bottom: 17.6%;
+  left: 20.3%;
+  color: #fff;
+  display: flex;
+  column-gap: 157px;
+  list-style: none;
+  font-weight: 700;
+}
+
+.timer-item {
+  rotate: -45deg;
+}
+
+.snackbar-item {
+  rotate: 26deg;
+}
+
+.hw-link {
+  padding: 5px 8px;
+  transition:
+    background-color 500ms ease-in-out,
+    outline 250ms ease-in-out;
+  border-radius: 30%;
+}
+
+.timer-link:hover {
+  outline: 2px solid rgb(255, 26, 26);
+  box-shadow: 0 0 6px rgba(255, 26, 26, 0.6);
+  background-color: rgba(255, 26, 26, 0.6);
+}
+
+.snack-link:hover {
+  outline: 2px solid rgb(26, 140, 255);
+  box-shadow: 0 0 6px rgba(26, 140, 255, 0.6);
+  background-color: rgba(26, 140, 255, 0.6);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-style: normal;
+  margin-bottom: 20px;
 }
 
 .value {
   font-size: 40px;
 }
 
-button {
+.btn {
   display: inline-block;
   min-width: 75px;
   height: 40px;
   font-size: 16px;
   font-weight: 500;
-  color: #fff;
-  background-color: #4e75ff;
+  color: #000;
+  background-color: #00ff00;
   border-radius: 8px;
   padding: 8px 16px;
   cursor: pointer;
@@ -41,28 +141,35 @@ button {
   border: none;
 }
 
-button:hover {
-  background-color: #6c8cff;
+.btn:hover {
+  background-color: #33ff33;
+  border-color: #33ff33;
+  color: #000;
+  box-shadow:
+    0 0 8px rgba(51, 255, 51, 0.7),
+    0 0 16px rgba(51, 255, 51, 0.5),
+    inset 0 0 4px rgba(255, 255, 255, 0.2);
 }
 
-button[disabled] {
-  background-color: #cfcfcf;
-  color: #989898;
-  cursor: default;
+.btn[disabled] {
+  background-color: #0d0d0d;
+  border: 1px solid #2dff2d20;
+  color: #2dff2d40;
 }
 
 #datetime-picker {
   width: 272px;
   height: 40px;
   padding: 8px 16px;
-  border: 1px solid #808080;
+  border: 1px solid #006600;
   border-radius: 4px;
   outline: none;
+  background-color: transparent;
 }
 
 #datetime-picker:hover,
 #datetime-picker:focus {
-  border: 1px solid #000;
+  border: 1px solid #00ff00;
 }
 
 .timer {
@@ -78,4 +185,111 @@ button[disabled] {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.back-link {
+  display: block;
+  width: 70px;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.back-link:hover {
+  outline: 1px solid #00ff00;
+}
+
+/* TASK-2 */
+
+.form {
+  max-width: 360px;
+}
+
+input[type='number'] {
+  margin-top: 8px;
+  width: 100%;
+  background-color: transparent;
+  color: #00ff00;
+}
+
+input {
+  height: 40px;
+  padding: 8px 16px;
+  outline: none;
+}
+
+fieldset label {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+fieldset {
+  margin-top: 16px;
+  width: 100%;
+  height: 78px;
+  display: flex;
+  justify-content: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 8px 28px;
+}
+
+fieldset label > input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-radio-btn {
+  border: 1px solid #006600;
+  fill: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  outline: transparent;
+}
+
+use {
+  opacity: 0;
+}
+
+label:hover > input + .custom-radio-btn {
+  border: 2px solid #006600;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+input[type='radio']:checked + .custom-radio-btn {
+  background-color: #00ff00;
+  border: 5px solid rgba(0, 0, 0, 0.9);
+  outline: 1px solid #00ff00;
+}
+
+.notification-btn {
+  display: block;
+  margin-top: 24px;
+  width: 100%;
+}
+
+input,
+fieldset {
+  border: 1px solid #006600;
+  border-radius: 4px;
+}
+
+input:hover,
+fieldset:hover {
+  border-color: #00ff00;
+}
+
+input:focus {
+  border-color: #00ff00;
 }
